@@ -1,4 +1,4 @@
-QUERVEX 1.0.0 inclut les logiciels tiers suivants.
+QUERVEX 1.0.1 inclut les logiciels tiers suivants.
 
 ==============================================================================
 @colors/colors@1.5.0 (MIT)
