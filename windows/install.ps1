@@ -1,14 +1,14 @@
 <#
 .SYNOPSIS
-  Installs QUERVEX 1.0.1 for the current Windows user (no administrator rights needed).
+  Installs QUERVEX 1.0.2 for the current Windows user (no administrator rights needed).
 .DESCRIPTION
-  Downloads the standalone executable of release v1.0.1 (or uses it if it sits next to this
+  Downloads the standalone executable of release v1.0.2 (or uses it if it sits next to this
   script), checks its SHA-256 fingerprint, copies it to %LOCALAPPDATA%\Programs\quervex and adds
   that folder to your user PATH. Without a standalone executable for your machine, falls back to
   npm (Node.js >= 22).
 
   One-line install from PowerShell:
-    irm https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1/install.ps1 | iex
+    irm https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2/install.ps1 | iex
 .PARAMETER Mode
   auto (default): standalone executable, otherwise npm.   exe: executable only.   npm: npm only.
 .PARAMETER InstallDir
@@ -25,11 +25,11 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'   # PowerShell 5.1: the progress bar slows downloads down
-$Version = '1.0.1'
-$BaseUrl = if ($env:QUERVEX_DOWNLOAD_BASE) { $env:QUERVEX_DOWNLOAD_BASE.TrimEnd('/') } else { 'https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1' }
+$Version = '1.0.2'
+$BaseUrl = if ($env:QUERVEX_DOWNLOAD_BASE) { $env:QUERVEX_DOWNLOAD_BASE.TrimEnd('/') } else { 'https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2' }
 # SHA-256 of the release executables, written by the build: a download is never run unchecked.
 $Sha256 = @{
-  'quervex-setup-windows-x64.exe'   = '7bc85de9680d9695f85621b5a128ef10c1cfa9b44fe2e76cb755f4c9722efc5a'
+  'quervex-setup-windows-x64.exe'   = 'd972692b1fc7224ff6b5f4553fb998861522303d3fd67b99bd9226d5324f3efd'
   'quervex-setup-windows-arm64.exe' = ''
 }
 # Empty when run through "irm | iex": nothing can sit next to the script.

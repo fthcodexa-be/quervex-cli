@@ -1,12 +1,12 @@
 #!/bin/sh
-# QUERVEX 1.0.1 installer for Linux, macOS and WSL (no root rights needed).
+# QUERVEX 1.0.2 installer for Linux, macOS and WSL (no root rights needed).
 #
-# Downloads the standalone executable of release v1.0.1 (or uses it if it sits next to this
+# Downloads the standalone executable of release v1.0.2 (or uses it if it sits next to this
 # script), checks its SHA-256 fingerprint, copies it to ~/.local/bin/quervex and offers to add that
 # folder to PATH. Without a standalone executable for your machine, falls back to npm (Node.js >= 22).
 #
 # One-line install:
-#   curl -fsSL https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1/install.sh | sh
+#   curl -fsSL https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2/install.sh | sh
 #
 #   --mode=auto|exe|npm   auto (default): standalone executable, otherwise npm
 #   --install-dir=DIR     target folder (default: ~/.local/bin)
@@ -14,8 +14,8 @@
 #   --yes                 answer yes to every question
 set -eu
 
-VERSION="1.0.1"
-BASE_URL="${QUERVEX_DOWNLOAD_BASE:-https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1}"
+VERSION="1.0.2"
+BASE_URL="${QUERVEX_DOWNLOAD_BASE:-https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2}"
 MODE=auto
 INSTALL_DIR="$HOME/.local/bin"
 NO_PATH=0
@@ -55,8 +55,8 @@ ask() {
 # SHA-256 of the release executables, written by the build: a download is never run unchecked.
 expected_sha256() {
   case "$1" in
-    quervex-setup-linux-x64) echo "a909c271df529eb1fe2eab911604d0e5b42f54987493fa409cd10a65ad0106df" ;;
-    quervex-setup-linux-arm64) echo "0ce149a537bda8e640a03cf01ba9179ae95c2e71b3efe4bdd96f7f8790d9bd32" ;;
+    quervex-setup-linux-x64) echo "00de3ea85f250dd58564b7c1e21a63cc86a4b313e494fc2d502a08b3cef92291" ;;
+    quervex-setup-linux-arm64) echo "8d6f41e7a90df78d44c4313dc75f11a2064eff5b8f0347e264efbd1546a67c54" ;;
     quervex-setup-macos-x64) echo "" ;;
     quervex-setup-macos-arm64) echo "" ;;
     *) echo "" ;;

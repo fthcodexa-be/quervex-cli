@@ -9,16 +9,27 @@
  ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
 ```
 
-**PostgreSQL recon console** — create, connect to and explore PostgreSQL databases safely, right from your terminal.
+**Explore PostgreSQL schemas from your terminal — with Merise cardinalities and a live entity-relationship diagram.**
 
-![version](https://img.shields.io/badge/version-1.0.1-00f0ff)
+![version](https://img.shields.io/badge/version-1.0.2-00f0ff)
 ![platforms](https://img.shields.io/badge/platforms-windows%20%7C%20linux%20%7C%20WSL%20%7C%20macOS-7a5cff)
 ![price](https://img.shields.io/badge/price-free-39ff14)
 ![license](https://img.shields.io/badge/license-MIT-ff00c8)
 
+<img src="https://raw.githubusercontent.com/fthcodexa-be/quervex-cli/v1.0.2/assets/quervex-explore.gif" alt="QUERVEX /explore: live entity-relationship diagram with Merise cardinalities, table filter, drag and zoom, then the database view" width="900">
+
 </div>
 
-This repository contains the **installers** of QUERVEX. QUERVEX is free: no account, no subscription, no telemetry.
+## Why QUERVEX?
+
+- **Understand a schema at a glance.** `/explore` opens a local page with an entity-relationship diagram in the Merise style (`0,n` · `0,1` · `1,1`), filterable by table, draggable and zoomable. It refreshes by itself when the schema changes.
+- **Learn while you work.** `/debug lint` explains bad practices and gives the SQL to fix them; PostgreSQL errors are explained and pinpointed in your query.
+- **Safe by default.** Read-only until you decide otherwise, destructive statements need confirmation, values are always bound parameters.
+- **Free.** No account, no subscription, no telemetry: everything stays on your machine.
+
+<img src="https://raw.githubusercontent.com/fthcodexa-be/quervex-cli/v1.0.2/assets/quervex-console.png" alt="QUERVEX console: /print table commande --graph shows parent and child tables with their cardinalities" width="760">
+
+This repository contains the **installers** of QUERVEX.
 
 ## Install
 
@@ -28,8 +39,8 @@ No administrator rights are needed. Afterwards, open a **new** terminal and type
 
 | Method | How |
 |---|---|
-| Setup program | download [`quervex-setup-windows-x64.exe`](https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1/quervex-setup-windows-x64.exe) and double-click it |
-| PowerShell, one line | `irm https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1/install.ps1 \| iex` |
+| Setup program | download [`quervex-setup-windows-x64.exe`](https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2/quervex-setup-windows-x64.exe) and double-click it |
+| PowerShell, one line | `irm https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2/install.ps1 \| iex` |
 | From this repository | double-click `windows\install.cmd` |
 
 QUERVEX goes to `%LOCALAPPDATA%\Programs\quervex` and that folder is added to *your* PATH. The program is not code-signed yet: if SmartScreen warns you, choose *More info → Run anyway*. Restart VS Code (or any app with an open terminal) so it sees the new PATH.
@@ -38,9 +49,9 @@ QUERVEX goes to `%LOCALAPPDATA%\Programs\quervex` and that folder is added to *y
 
 | Method | How |
 |---|---|
-| One line | `curl -fsSL https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.1/install.sh \| sh` |
+| One line | `curl -fsSL https://github.com/fthcodexa-be/quervex-cli/releases/download/v1.0.2/install.sh \| sh` |
 | From this repository | `sh unix/install.sh` |
-| Setup program (Linux, WSL) | download `quervex-setup-linux-x64` (or `-arm64`) from the [release](https://github.com/fthcodexa-be/quervex-cli/releases/tag/v1.0.1), then `chmod +x quervex-setup-linux-x64 && ./quervex-setup-linux-x64` |
+| Setup program (Linux, WSL) | download `quervex-setup-linux-x64` (or `-arm64`) from the [release](https://github.com/fthcodexa-be/quervex-cli/releases/tag/v1.0.2), then `chmod +x quervex-setup-linux-x64 && ./quervex-setup-linux-x64` |
 
 QUERVEX goes to `~/.local/bin/quervex`; the installer offers to add that folder to your PATH. On macOS, QUERVEX is installed with npm for now (Node.js ≥ 22 required).
 
